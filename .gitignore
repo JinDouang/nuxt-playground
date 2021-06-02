@@ -38,6 +38,16 @@ build/Release
 node_modules/
 jspm_packages/
 
+# misc
+/.sass-cache
+/connect.lock
+package-lock.json
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+
 # TypeScript v1 declaration files
 typings/
 
