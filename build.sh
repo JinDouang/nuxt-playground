@@ -6,7 +6,7 @@ NUXT_IMAGE_NAME=nuxt-playground
 # build nuxt app image
 buildImage () {
   # checking if docker image already exists
-  if [[ $(docker image inspect --format='{{index .RepoTags 0}}' angular-playground) == $NUXT_IMAGE_NAME:latest ]];
+  if [[ $(docker image inspect --format='{{index .RepoTags 0}}' nuxt-playground) == $NUXT_IMAGE_NAME:latest ]];
     then
         # cleanup
         clean
@@ -19,7 +19,7 @@ buildImage () {
 # clean nuxt app image
 clean() {
   # checking if docker image already exists
-  if [[ $(docker image inspect --format='{{index .RepoTags 0}}' angular-playground) == $NUXT_IMAGE_NAME:latest ]];
+  if [[ $(docker image inspect --format='{{index .RepoTags 0}}' nuxt-playground) == $NUXT_IMAGE_NAME:latest ]];
     then
         # cleanup
         docker-compose down && docker rmi -f $NUXT_IMAGE_NAME
@@ -35,7 +35,7 @@ startNuxt() {
 
 # build nuxt app (.nuxt output)
 buildNuxtApp() {
-    docker-compose run --rm angular sh -c "npm run build"
+    docker-compose run --rm nuxt-build
 }
 
 for param in "$@"
