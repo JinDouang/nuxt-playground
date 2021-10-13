@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# variable
+## variable
 NUXT_IMAGE_NAME=nuxt-playground
 
 # build nuxt app image
